@@ -11,4 +11,6 @@ RUN apk add --update ca-certificates openssl && update-ca-certificates && \
   rm -f rancher-linux-amd64-${CLI_VERSION}.tar.gz && \
   rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["./rancher"]
+ENV PATH $PATH:/cli
+
+ENTRYPOINT ["rancher"]
